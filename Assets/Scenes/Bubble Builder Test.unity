@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b8e5ecf72984f8c674353a67e24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <BubbleHolder>k__BackingField: {fileID: 778826461}
+  _offsetTransform: {fileID: 778826461}
 --- !u!4 &517960072
 Transform:
   m_ObjectHideFlags: 0
@@ -342,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6422aeaba8776489ec85cf1aeed241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetBubbleEntity: {fileID: 517960071}
   _bubblePrefab: {fileID: 27768883}
 --- !u!1001 &8147778506583067908
 PrefabInstance:

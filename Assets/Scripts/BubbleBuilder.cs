@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BubbleBuilder : MonoBehaviour
 {
+    [SerializeField] BubbleEntity _targetBubbleEntity;
     [SerializeField] GameObject _bubblePrefab;
     Vector2 _placePoint;
 
@@ -26,7 +27,8 @@ public class BubbleBuilder : MonoBehaviour
 
     void PlaceBubble()
     {
-        Instantiate(_bubblePrefab, _placePoint, Quaternion.identity);
+        Instantiate(_bubblePrefab, _placePoint, Quaternion.identity, _targetBubbleEntity.BubbleHolder);
+        _targetBubbleEntity.AdjustCOM();
     }
 
     void HandleBubbleCast()
