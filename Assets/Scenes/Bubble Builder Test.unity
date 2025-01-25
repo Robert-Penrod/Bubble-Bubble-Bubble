@@ -129,6 +129,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6401109748159361813, guid: 5a2ffb9576b8ee247bf1a5f9e0a65464, type: 3}
   m_PrefabInstance: {fileID: 8147778506583067908}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &376870737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376870738}
+  - component: {fileID: 376870739}
+  m_Layer: 0
+  m_Name: Player Brain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376870738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376870737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 517960072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376870739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376870737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e6a118c91c1b74cbe422e5c5433718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &517960070
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b8e5ecf72984f8c674353a67e24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveForce: 5
+  TurnForce: 5
   <BubbleHolder>k__BackingField: {fileID: 778826461}
   _offsetTransform: {fileID: 778826461}
 --- !u!4 &517960072
@@ -175,6 +221,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 778826461}
+  - {fileID: 376870738}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &517960073
