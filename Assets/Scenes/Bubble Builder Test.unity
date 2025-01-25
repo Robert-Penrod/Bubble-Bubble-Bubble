@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b8e5ecf72984f8c674353a67e24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 5
-  TurnForce: 5
+  MoveForce: 1
+  TurnForce: 0.5
   <BubbleHolder>k__BackingField: {fileID: 778826461}
   _offsetTransform: {fileID: 778826461}
 --- !u!4 &517960072
@@ -237,8 +237,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 1
-  m_AngularDamping: 0.05
+  m_LinearDamping: 5
+  m_AngularDamping: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:

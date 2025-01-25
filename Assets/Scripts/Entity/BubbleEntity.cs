@@ -47,13 +47,14 @@ public class BubbleEntity : MonoBehaviour
     #region Controls
     public void Move(Vector2 dir)
     {
-        _rb.AddForce(dir.normalized * MoveForce);
+        _rb.AddForce(dir.normalized * MoveForce * _rb.linearDamping);
     }
 
     public void Turn(float dir)
     {
+        if (dir.Abs() < 0.01f) return;
         dir = Mathf.Sign(dir);
-        _rb.AddTorque(dir * TurnForce);
+        _rb.AddTorque(dir * TurnForce * _rb.angularDamping);
     }
     #endregion
 }
