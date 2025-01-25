@@ -34,14 +34,16 @@ public class BubbleBuilder : MonoBehaviour
     void HandleBubbleCast()
     {
         Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = BubblePerimiterCast(Vector2.zero, mousePoint, mousePoint.magnitude);
+        Vector2 inputDir = mousePoint - (Vector2)_targetBubbleEntity.transform.position;
+
+        RaycastHit2D hit = BubblePerimiterCast(_targetBubbleEntity.transform.position, inputDir, mousePoint.magnitude);
         if (hit.collider == null) return;
         _placePoint = hit.point + hit.normal * 0.5f * 0.9f;
     }
 
-    RaycastHit2D BubblePerimiterCast(Vector2 origin, Vector2 point, float radius)
+    RaycastHit2D BubblePerimiterCast(Vector2 origin, Vector2 inputDir, float radius)
     {
-        Vector2 dir = (origin - point).normalized;
+        Vector2 dir = -inputDir.normalized;
         Vector2 castOrigin = origin - dir * radius;
         RaycastHit2D hit = Physics2D.CircleCast(castOrigin, 0.5f, dir, Vector2.Distance(origin, castOrigin));
         hit.normal = -dir;
