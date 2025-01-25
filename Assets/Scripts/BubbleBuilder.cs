@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class BubbleBuilder : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject _bubblePrefab;
+
+    private void Update()
     {
-        
+        Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        //BubblePerimiterCast();
     }
 
-    // Update is called once per frame
-    void Update()
+    void BubblePerimiterCast(Vector2 origin, Vector2 point, float radius)
     {
-        
+
     }
 }
