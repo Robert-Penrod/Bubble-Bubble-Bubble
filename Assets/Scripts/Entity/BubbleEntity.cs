@@ -52,6 +52,7 @@ public class BubbleEntity : MonoBehaviour
 
     public void Turn(float dir)
     {
+        dir = -dir;
         if (dir.Abs() < 0.01f) return;
         dir = Mathf.Sign(dir);
         _rb.AddTorque(dir * TurnForce * _rb.angularDamping);
