@@ -4,6 +4,12 @@ public class BubbleEntity : MonoBehaviour
 {
     [field: SerializeField] public Transform BubbleHolder { get; private set; }
     [SerializeField] Transform _offsetTransform;
+    Vector2 _targetLocalOffset;
+
+    private void Update()
+    {
+        _offsetTransform.transform.localPosition = _offsetTransform.transform.localPosition.Lerp(_targetLocalOffset, 12f * Time.deltaTime);
+    }
 
     public void AdjustCOM()
     {
@@ -17,6 +23,6 @@ public class BubbleEntity : MonoBehaviour
         if (count == 0) return;
         averageLocalPos /= count;
 
-        _offsetTransform.transform.localPosition = -(Vector3)averageLocalPos;
+        _targetLocalOffset = -(Vector3)averageLocalPos;
     }
 }
